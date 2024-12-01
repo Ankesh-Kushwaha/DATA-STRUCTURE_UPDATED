@@ -18,8 +18,8 @@ void DijkstrasAlgo(int src,vector<vector<edge>> graph,int V){
    priority_queue<pair<int,int> ,vector<pair<int,int>> ,greater<pair<int,int>>> pq;//contain dist[v],v;
    vector<int> dist(V,INT32_MAX);
   
-  pq.push(make_pair(0,src));
   dist[src]=0;
+  pq.push(make_pair(0, src));
 
   while(pq.size()>0){
     int u=pq.top().second;
@@ -39,6 +39,7 @@ void DijkstrasAlgo(int src,vector<vector<edge>> graph,int V){
   }
   cout<<endl;
 }
+
 int main(){
 int V=6;
 vector<vector<edge>> graph(V);
@@ -56,6 +57,6 @@ graph[3].push_back(edge(5,1));
 graph[4].push_back(edge(3,2));
 graph[4].push_back(edge(5,5));
 
-DijkstrasAlgo(5,graph,V);
+DijkstrasAlgo(0,graph,V);
   return 0;
 }

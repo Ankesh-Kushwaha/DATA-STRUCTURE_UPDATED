@@ -8,7 +8,7 @@ bool targetSum(vector<int> nums,int target){
 
   for(int i=1;i<n+1;i++){
     for(int j=1;j<target+1;j++){
-      if(nums[i-1]<=j){ //maximum of include  exorclude
+      if(nums[i-1]<=j){ //maximum of include  or exclude
         dp[i][j]=max(nums[i-1]+dp[i-1][j-nums[i-1]],dp[i-1][j]);
       }
       else{
@@ -29,8 +29,8 @@ bool targetSum(vector<int> nums,int target){
 
 
 int main(){
-  vector<int> nums={4,2,7,1,13};
-  int target=7;
+  vector<int> nums={3,34,4,12,5,2};
+  int target=9;
    cout<<targetSum(nums,target)<<endl;
   return 0;
 }
