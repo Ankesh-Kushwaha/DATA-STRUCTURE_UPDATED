@@ -21,12 +21,15 @@ class graph{
   bool cycleUndirHelper(int src, int par, vector<bool> &vis){
     vis[src] = true;
     for(auto v : l[src]){
-      if(!vis[v]){
+      if(!vis[v]){  // if not visited than simply visit it and mark visited
         if(cycleUndirHelper(v, src, vis)){
           return true;
         }
       }
-      else if(v != par){
+      else if(v != par)
+      { // if parent and neighbour are not equal and already visited than there is a cycle present;
+          // because it indicate that the node is visited through a different path which does not consist it neighbour
+          // parent and neighbour of visited node is always equal if cycle does not present
         return true;
       }
     }
