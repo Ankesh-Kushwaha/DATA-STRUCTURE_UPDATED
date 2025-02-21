@@ -97,6 +97,31 @@ void levelorder(Node* root){
     }
 }
 
+vector<int> levelorder2(Node*root){
+  queue<Node*> q;
+ 
+  vector<int> ans;
+  q.push(root);
+  while(!q.empty()){
+    Node *curr = q.front();
+    q.pop();
+
+    ans.push_back(curr->data);
+
+    if(curr->left){
+      q.push(curr->left);
+    }
+
+    if(curr->right){
+      q.push(curr->right);
+    }
+
+  }
+
+  return ans;
+}
+
+
 int height(Node* root){
   if(root==NULL){
     return 0;
@@ -126,9 +151,13 @@ Node* root=buildTree(Nodes);
 //cout<<"root:"<<root->data<<endl;
 
 //preorder(root);
-levelorder(root);
-cout<<"Height of Tree is:"<<height(root)<<endl;
-cout<<endl;
-cout<<"diameter of the tree is :"<<diameter(root)<<endl;
+vector<int> temp=levelorder2(root);
+for (int i = 0; i < temp.size();i++){
+  cout << temp[i] << " ";
+}
+
+  // cout<<"Height of Tree is:"<<height(root)<<endl;
+  // cout<<endl;
+  // cout<<"diameter of the tree is :"<<diameter(root)<<endl;
   return 0;
 }
