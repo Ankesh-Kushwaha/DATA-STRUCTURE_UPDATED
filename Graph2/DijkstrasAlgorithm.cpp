@@ -28,7 +28,7 @@ void DijkstrasAlgo(int src,vector<vector<edge>> graph,int V){
     vector<edge> neighbour=graph[u];
     for(auto e:neighbour){
        if(dist[e.v]>dist[u]+e.wt){
-         dist[e.v]=dist[u]+e.wt;
+         dist[e.v]=dist[u]+e.wt;  ///path compression
          pq.push(make_pair(dist[e.v],e.v));
        }
     }
