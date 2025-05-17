@@ -66,7 +66,7 @@ Node* delNode(Node* root,int val){
    }
    else{
     // if root-data==val
-    //case 1 leaf node
+    //case 1 : -> leaf node 
     if(root->right==NULL && root->left==NULL){
         delete root;
         return NULL;
