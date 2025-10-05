@@ -35,6 +35,8 @@ Node* buildTree(int *arr,int n){
    }
    return root;
 }
+
+
 void inorder(Node*root){
   if(root==NULL){
     return ;

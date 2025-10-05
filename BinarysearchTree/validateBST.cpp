@@ -45,6 +45,8 @@ void inorder(Node* root){
    cout<<root->data<<" ";
   inorder(root->right);
 }
+
+
 bool validateBSThelper(Node* root,Node* min,Node* max){
  if(root==NULL){
   return true;
